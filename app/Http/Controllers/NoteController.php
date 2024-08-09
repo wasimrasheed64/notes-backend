@@ -29,7 +29,6 @@ class NoteController extends Controller
     {
         try{
             $note = $this->notesModel->create([ 'user_id' => Auth::user()->id ] + $request->validated());
-
             return response()->json([
                 'note' => $note,
                 'message' => 'Note created successfully'
